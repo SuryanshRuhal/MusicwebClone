@@ -42,6 +42,22 @@ audioElement.addEventListener('timeupdate',()=>{
     console.log('timeupdate');
     progress= parseInt((audioElement.currentTime/audioElement.duration)*100);
     progressbar.value= progress;
+    if(audioElement.currentTime==audioElement.duration){
+        if(songIndex>=9){
+            songIndex=0;
+        }
+        else{
+            songIndex +=1;
+        }
+        audioElement.src=`hindisongs/${songIndex+1}.mp3`;
+        songplay.innerText= songs[songIndex].songName;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        masterplay.classList.remove('fa-regular');
+            masterplay.classList.remove('fa-circle-play'); 
+            masterplay.classList.add('fa-regular'); 
+            masterplay.classList.add('fa-circle-pause');
+    }
 })
 progressbar.addEventListener('change',()=> {
         audioElement.currentTime = progressbar.value * audioElement.duration / 100;
