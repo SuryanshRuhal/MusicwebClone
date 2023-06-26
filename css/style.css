@@ -1,0 +1,192 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+#navbar{
+    display:flex;
+    padding:2px;
+    margin: 2px;
+    position: sticky;
+    top:0px;
+
+}
+#navbar::before{
+    content:"";
+    position:absolute;
+    background-color:black;
+    top:0px;
+    left:0px;
+    opacity: 1.0;
+    z-index:-1;
+    height:100%;
+    width:100%;
+}
+#navbar .logo{
+    padding: 5px 30px;
+}
+#navbar .logo img{
+    border: groove 6px #f8dbdb;
+    height: 80px;
+    width: 80px;
+    border-radius: 123px;
+}
+#navbar ul{
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+}
+#navbar li{
+    text-decoration: none;
+    list-style: none;
+    margin:17px 0px;
+    font-size: 1.7rem;
+}
+#navbar li a{
+    color :white;
+    padding: 30px 25px;
+    text-decoration: none;
+    display :block;
+    border-radius:53px;
+}
+#navbar li a:hover{
+    cursor:pointer;
+    background-color: aqua;
+    color:rgb(1, 44, 44);
+}
+#home{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    height:800px;
+    width:100%;
+    text-align: center;
+    justify-content: center;
+}
+#home::before{
+    content: "";
+    position: absolute;
+    background: url("../home1.png") no-repeat center center/cover;
+    height:800px;
+    width:100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+#home h1{
+    color: rgb(237 206 223);
+    text-align: center;
+    font-size: 3.5rem;
+    padding-left: 286px;
+    margin: 0px 148px;
+}
+#home div,span{
+    color: rgb(164 219 217);
+    text-align: center;
+    font-size: 1.5rem ;
+    padding-left: 286px;
+    margin: 0px 148px;
+    font-family: 'Playball', cursive;
+}
+
+#about{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    height:800px;
+    width:100%;
+    text-align: center;
+    justify-content: center;
+}
+#about::before{
+    content: "";
+    position: absolute;
+    background: url("../b1.png") no-repeat center center/cover;
+    height:800px;
+    width:100%;
+    z-index: -2;
+    opacity: 0.7;
+}
+
+#about h1{
+    color: rgb(53 1 29);
+    text-align: center;
+    font-size: 5.5rem;
+    margin: 0px 148px;
+}
+#about div{
+    color: rgb(3 55 52);
+    text-align: center;
+    font-size: 2.5rem ;
+    margin: 0px 148px;
+    font-family: 'Playball', cursive;
+    
+}
+#mus{
+    display: flex;
+    margin: 15px;
+    
+}
+#music h1{
+    color: rgb(53 1 29);
+    font-size: 3.8rem;
+    font-family: 'Rubik', sans-serif;
+}
+#mus .box{
+    border: 7px groove rgb(12 169 167);
+    margin: 0px 5px;
+    padding: 15px 10px;
+    background: #eaf9ff;
+    flex:1;
+    border-radius:30px;
+
+    
+}
+#mus .box img{
+    height:460px;
+    width: 385px;
+    display: block;
+    margin:auto;
+
+}
+#mus .box p{
+    font-family:'Playball', cursive;
+    font-size: 1.35rem;
+}
+#mus .box .btn{
+    display: block;
+    margin: 16px auto;
+ }
+ #mus .box .btn a{
+    display: block;
+    color: white;
+    text-decoration: none;
+ }
+ #mus .box .btn a:hover{
+    cursor:pointer;
+    background-color: aqua;
+    color:rgb(1, 44, 44);
+ }
+ 
+/*utility class*/
+.hprimary{
+    font-size: 3.4 rem;
+    color: aqua;
+    padding: 17px;
+}
+.hsecondary{
+    font-size: 3.4rem;
+    color: #3e4251;
+    padding: 17px;
+}
+.center{
+    text-align: center;
+}
+.btn{
+    padding: 12px 23px;
+    margin: 17px;
+    border: 2px solid rgb(1 26 25);
+    color: wheat;
+    border-radius: 17px;
+    background-color: rgb(5 111 104);
+    cursor: pointer;
+    align-items: center;
+}

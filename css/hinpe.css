@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(225, 253, 244);
+}
+ 
+ #navbar ul li a:hover{
+    cursor:pointer;
+    background-color: aqua;
+    color:rgb(1, 44, 44);
+}
+.container{
+    color:aliceblue;
+ }
+ .songitem{
+    background-color: aliceblue;;
+ }
+
+ h2.hsecondary.center {
+     text-align: center;
+ }
+ #navbar ul li a{
+     padding: 34px 16px;
+ }
+ 
+ #navbar .logo {
+     padding: 5px 9px;
+ }
