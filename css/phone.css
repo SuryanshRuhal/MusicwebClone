@@ -1,0 +1,54 @@
+
+#navbar ul li a:hover{
+    cursor:pointer;
+    background-color: aqua;
+    color:rgb(1, 44, 44);
+}
+#navbar ul li a{
+    padding: 34px 16px;
+}
+#navbar ul li {
+    margin: 1px 0px;
+    font-size: 1rem;
+}
+
+#navbar .logo {
+    padding: 5px 9px;
+}
+#home {
+    height:862px;
+    margin-bottom: 70px;
+}
+#home::before{
+    height:1004px;
+}
+#home h1{
+    padding-left: 0px;
+    font-size: 2.3rem;
+    margin:4px 27px;
+}
+#home div,span{
+    padding-left: 0px;
+    margin:4px 28px;
+}
+#about h1 {
+    font-size: 3.5rem;
+    margin: 0px 0px;
+}
+#about{
+    height:707px;
+}
+#about::before{
+    height:707px;
+}
+#about div {
+    font-size: 1.5rem;
+    margin: 4px 27px;
+}
+#mus {
+    flex-direction: column;
+}
+#mus .box img {
+    height: 397px;
+    width: 292px;
+}

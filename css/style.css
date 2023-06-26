@@ -5,7 +5,7 @@
 #navbar{
     display:flex;
     padding:2px;
-    margin: 2px;
+    margin: 0px;
     position: sticky;
     top:0px;
 
@@ -132,7 +132,7 @@
 }
 #mus .box{
     border: 7px groove rgb(12 169 167);
-    margin: 0px 5px;
+    margin: 6px 5px;
     padding: 15px 10px;
     background: #eaf9ff;
     flex:1;
