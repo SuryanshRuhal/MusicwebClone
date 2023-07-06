@@ -42,22 +42,7 @@ audioElement.addEventListener('timeupdate',()=>{
     console.log('timeupdate');
     progress= parseInt((audioElement.currentTime/audioElement.duration)*100);
     progressbar.value= progress;
-    if(audioElement.currentTime==audioElement.duration){
-        if(songIndex>=9){
-            songIndex=0;
-        }
-        else{
-            songIndex +=1;
-        }
-        audioElement.src=`hindisongs/${songIndex+1}.mp3`;
-        songplay.innerText= songs[songIndex].songName;
-        audioElement.currentTime = 0;
-        audioElement.play();
-        masterplay.classList.remove('fa-regular');
-            masterplay.classList.remove('fa-circle-play'); 
-            masterplay.classList.add('fa-regular'); 
-            masterplay.classList.add('fa-circle-pause');
-    }
+    
 })
 progressbar.addEventListener('change',()=> {
         audioElement.currentTime = progressbar.value * audioElement.duration / 100;
@@ -123,3 +108,115 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
         masterplay.classList.add('fa-regular'); 
         masterplay.classList.add('fa-circle-pause');
  })
+ let anu=0;
+ document.getElementById("shuffle").addEventListener('click',()=>{
+    if(anu===0){
+        anu=1;
+        document.getElementById("shuffle").style.opacity="0.6";
+        document.getElementById("shuffle").style.border="2px solid white";
+    }
+    else {
+        anu=0;
+        document.getElementById("shuffle").removeAttribute('style');
+    }
+    console.log("anu:"+anu);
+    songIndex= Math.ceil(Math.random()*9);
+    console.log(songIndex);
+    audioElement.src=`hindisongs/${songIndex+1}.mp3`;
+    songplay.innerText= songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterplay.classList.remove('fa-solid');
+        masterplay.classList.remove('fa-circle-play'); 
+        masterplay.classList.add('fa-regular'); 
+        masterplay.classList.add('fa-circle-pause');
+   
+ });
+ audioElement.addEventListener('timeupdate',()=>{
+if(anu===0&&rep===0){
+    if(audioElement.currentTime==audioElement.duration){
+        if(songIndex>=9){
+            songIndex=0;
+        }
+        else{
+            songIndex +=1;
+        }
+        audioElement.src=`hindisongs/${songIndex+1}.mp3`;
+        songplay.innerText= songs[songIndex].songName;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        masterplay.classList.remove('fa-regular');
+            masterplay.classList.remove('fa-circle-play'); 
+            masterplay.classList.add('fa-regular'); 
+            masterplay.classList.add('fa-circle-pause');
+    }
+}else if(anu===1){
+    if (audioElement.currentTime==audioElement.duration)
+    {
+        songIndex= Math.ceil(Math.random()*10);
+    console.log(songIndex);
+    audioElement.src=`hindisongs/${songIndex+1}.mp3`;
+    songplay.innerText= songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterplay.classList.remove('fa-solid');
+        masterplay.classList.remove('fa-circle-play'); 
+        masterplay.classList.add('fa-regular'); 
+        masterplay.classList.add('fa-circle-pause');
+    } 
+}
+ });
+ let rep=0;
+ document.getElementById("repeat").addEventListener('click',()=>{
+    if(rep===0){
+        rep=1;
+        document.getElementById("repeat").style.opacity="0.6";
+        document.getElementById("repeat").style.border="2px solid white";
+    }
+    else {
+        rep=0;
+        document.getElementById("repeat").removeAttribute('style');
+    }
+    console.log(rep);
+    audioElement.src=`hindisongs/${songIndex+1}.mp3`;
+    songplay.innerText= songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterplay.classList.remove('fa-solid');
+        masterplay.classList.remove('fa-circle-play'); 
+        masterplay.classList.add('fa-regular'); 
+        masterplay.classList.add('fa-circle-pause');
+ });
+ audioElement.addEventListener('timeupdate',()=>{
+    if(rep===0){
+        if(audioElement.currentTime==audioElement.duration){
+            if(songIndex>=9){
+                songIndex=0;
+            }
+            else{
+                songIndex +=1;
+            }
+            audioElement.src=`hindisongs/${songIndex+1}.mp3`;
+            songplay.innerText= songs[songIndex].songName;
+            audioElement.currentTime = 0;
+            audioElement.play();
+            masterplay.classList.remove('fa-regular');
+                masterplay.classList.remove('fa-circle-play'); 
+                masterplay.classList.add('fa-regular'); 
+                masterplay.classList.add('fa-circle-pause');
+        }
+    } else if(rep===1){
+        if (audioElement.currentTime===audioElement.duration)
+        { 
+            console.log(songIndex);
+        audioElement.src=`hindisongs/${songIndex+1}.mp3`;
+        songplay.innerText= songs[songIndex].songName;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        masterplay.classList.remove('fa-solid');
+            masterplay.classList.remove('fa-circle-play'); 
+            masterplay.classList.add('fa-regular'); 
+            masterplay.classList.add('fa-circle-pause');
+        } 
+    }
+     });

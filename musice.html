@@ -68,13 +68,24 @@
         <div class="bottom">
             <input type="range" name="range" min="0" value="0" max="100" id="progressbar">
             <div class="icons">
-                <i class="fa-solid fa-backward-step fa-3x" id="previous"></i>
-                <i class="fa-regular fa-circle-play fa-3x" id="masterPlay"></i>
-                <i class="fa-solid fa-forward-step fa-3x" id="next"></i>
+                    <div class="shuffle">
+                        <i class="fa-solid fa-shuffle fa-3x" id="shuffle"></i>
+                        <p>SHUFFLE</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-backward-step fa-3x" id="previous"></i>
+                        <i class="fa-regular fa-circle-play fa-3x" id="masterPlay"></i>
+                        <i class="fa-solid fa-forward-step fa-3x" id="next"></i>
+                        <div class="songinfo">
+                            <span id="songplay">UNTIL I FOUND YOU</span>
+                        </div>
+                    </div>
+                    <div class="repeat">
+                         <i class="fa-solid fa-repeat fa-3x" id="repeat"></i>
+                         <p>On-Repeat</p>
+                    </div>
             </div>
-            <div class="songinfo">
-                <span id="songplay">UNTIL I FOUND YOU</span>
-            </div>
+            
         </div>
     </section>
 </body>

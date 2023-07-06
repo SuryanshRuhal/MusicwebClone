@@ -87,6 +87,48 @@ cursor: pointer;
 #masterPlay{
     cursor: pointer;
 }
+#shuffle,
+#repeat{
+    cursor: pointer;
+}
+.icons{
+    display: flex;
+    margin-top: 4px;
+    justify-content: space-between;
+    width: 80vw;
+}
+.shuffle,
+.repeat p{
+    text-align: center;
+}
+.songinfo{
+   text-align: center;
+}
+@media only screen and (min-width: 300px) and (max-width:450px) {
+    .bottom i{
+        font-size: 1.4em;
+    }
+    .shuffle,
+.repeat p{
+    font-size: 0.8em;
+}
+.songinfo{
+    font-size: 0.9em;
+}
+}
+
+@media (min-width: 450px) and (max-width:570px) {
+    .bottom i{
+        font-size: 1.9em;
+    }
+    .shuffle,
+.repeat p{
+    font-size: 1em;
+}
+.songinfo{
+    font-size: 1em;
+}
+}
 .bottom{
     background: black;
     position: sticky;
