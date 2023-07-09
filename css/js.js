@@ -17,6 +17,9 @@ let songs=[
     {songName:"A Thousand Years", timestamp:"4:47",filePath:"englishsongs/8.mp3"},
     {songName:"We Don't Talk Anymore", timestamp:"3:50",filePath:"englishsongs/9.mp3"},
     {songName:"You Belong With Me", timestamp:"3:48",filePath:"englishsongs/10.mp3"},
+    {songName:"Days I'll Remember", timestamp:"3:34",filePath:"englishsongs/11.mp3"},
+    {songName:"As It Was", timestamp:"3:05",filePath:"englishsongs/12.mp3"},
+    {songName:"Welcome Home", timestamp:"0:29",filePath:"englishsongs/13.mp3"},
 ] 
 
 songitem.forEach((element,i)=>{
@@ -78,7 +81,7 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
 
  document.getElementById("previous").addEventListener('click',()=>{
     if(songIndex<=0){
-        songIndex=0
+        songIndex=12;
     }
     else{
         songIndex -=1;
@@ -93,7 +96,7 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
         masterplay.classList.add('fa-circle-pause');
  })
  document.getElementById("next").addEventListener('click',()=>{
-    if(songIndex>=9){
+    if(songIndex>=12){
         songIndex=0;
     }
     else{
@@ -120,7 +123,7 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
         document.getElementById("shuffle").removeAttribute('style');
     }
     console.log("anu:"+anu);
-    songIndex= Math.ceil(Math.random()*9);
+    songIndex= Math.ceil(Math.random()*12);
     console.log(songIndex);
     audioElement.src=`englishsongs/${songIndex+1}.mp3`;
     songplay.innerText= songs[songIndex].songName;
@@ -135,7 +138,7 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
  audioElement.addEventListener('timeupdate',()=>{
 if(anu===0&&rep===0){
     if(audioElement.currentTime==audioElement.duration){
-        if(songIndex>=9){
+        if(songIndex>=12){
             songIndex=0;
         }
         else{
@@ -190,7 +193,7 @@ if(anu===0&&rep===0){
  audioElement.addEventListener('timeupdate',()=>{
     if(rep===0){
         if(audioElement.currentTime==audioElement.duration){
-            if(songIndex>=9){
+            if(songIndex>=12){
                 songIndex=0;
             }
             else{

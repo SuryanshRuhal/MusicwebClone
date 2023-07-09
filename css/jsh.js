@@ -17,6 +17,9 @@ let songs=[
     {songName:"Tum Tak", timestamp:"5:05",filePath:"hindisongs/8.mp3"},
     {songName:"Mitwa", timestamp:"6:00",filePath:"hindisongs/9.mp3"},
     {songName:"Yeh Sham Mastani", timestamp:"4:41",filePath:"hindisongs/10.mp3"},
+    {songName:"Sooraj Ki Bahoon Main", timestamp:"3:24",filePath:"hindisongs/11.mp3"},
+    {songName:"Illahi", timestamp:"3:49",filePath:"hindisongs/12.mp3"},
+    {songName:"Kya Mohabbat Hai", timestamp:"5:02",filePath:"hindisongs/13.mp3"},
 ] 
 
 songitem.forEach((element,i)=>{
@@ -78,7 +81,7 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
 
  document.getElementById("previous").addEventListener('click',()=>{
     if(songIndex<=0){
-        songIndex=0
+        songIndex=12;
     }
     else{
         songIndex -=1;
@@ -93,7 +96,7 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
         masterplay.classList.add('fa-circle-pause');
  })
  document.getElementById("next").addEventListener('click',()=>{
-    if(songIndex>=9){
+    if(songIndex>=12){
         songIndex=0;
     }
     else{
@@ -120,7 +123,7 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
         document.getElementById("shuffle").removeAttribute('style');
     }
     console.log("anu:"+anu);
-    songIndex= Math.ceil(Math.random()*9);
+    songIndex= Math.ceil(Math.random()*12);
     console.log(songIndex);
     audioElement.src=`hindisongs/${songIndex+1}.mp3`;
     songplay.innerText= songs[songIndex].songName;
@@ -135,7 +138,7 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
  audioElement.addEventListener('timeupdate',()=>{
 if(anu===0&&rep===0){
     if(audioElement.currentTime==audioElement.duration){
-        if(songIndex>=9){
+        if(songIndex>=12){
             songIndex=0;
         }
         else{
@@ -153,7 +156,7 @@ if(anu===0&&rep===0){
 }else if(anu===1){
     if (audioElement.currentTime==audioElement.duration)
     {
-        songIndex= Math.ceil(Math.random()*10);
+        songIndex= Math.ceil(Math.random()*13);
     console.log(songIndex);
     audioElement.src=`hindisongs/${songIndex+1}.mp3`;
     songplay.innerText= songs[songIndex].songName;
@@ -190,7 +193,7 @@ if(anu===0&&rep===0){
  audioElement.addEventListener('timeupdate',()=>{
     if(rep===0){
         if(audioElement.currentTime==audioElement.duration){
-            if(songIndex>=9){
+            if(songIndex>=12){
                 songIndex=0;
             }
             else{
