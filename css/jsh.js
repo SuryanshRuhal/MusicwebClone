@@ -20,6 +20,19 @@ let songs=[
     {songName:"Sooraj Ki Bahoon Main", timestamp:"3:24",filePath:"hindisongs/11.mp3"},
     {songName:"Illahi", timestamp:"3:49",filePath:"hindisongs/12.mp3"},
     {songName:"Kya Mohabbat Hai", timestamp:"5:02",filePath:"hindisongs/13.mp3"},
+    {songName:"Bahon Mein Chale Aao", timestamp:"3:53",filePath:"hindisongs/14.mp3"},
+    {songName:"Hai Apna Dil To Aawara", timestamp:"4:25",filePath:"hindisongs/15.mp3"},
+    {songName:"Hoshwalon Ko Khabar Kya", timestamp:"5:07",filePath:"hindisongs/16.mp3"},
+    {songName:"Jane Kahan Mera Jigar Gaya Ji", timestamp:"3:38",filePath:"hindisongs/17.mp3"},
+    {songName:"Kaun Disha mein", timestamp:"6:44",filePath:"hindisongs/18.mp3"},
+    {songName:"Kun Faya Kun", timestamp:"7:52",filePath:"hindisongs/19.mp3"},
+    {songName:"Main Pal Do Pal Ka Shayar Hun", timestamp:"3:22",filePath:"hindisongs/20.mp3"},
+    {songName:"Ram Chandra Kripalu", timestamp:"3:53",filePath:"hindisongs/21.mp3"},
+    {songName:"Tum Itna Jo Muskura Rahe", timestamp:"5:17",filePath:"hindisongs/22.mp3"},
+    {songName:"Yeh Dil Tum Bin Lagta", timestamp:"5:51",filePath:"hindisongs/23.mp3"},
+    {songName:"Zeehale Muskin", timestamp:"7:26",filePath:"hindisongs/24.mp3"},
+    {songName:"Zindagi Kaisi Hai Paheli", timestamp:"3:30",filePath:"hindisongs/25.mp3"},
+    
 ] 
 
 songitem.forEach((element,i)=>{
@@ -81,7 +94,7 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
 
  document.getElementById("previous").addEventListener('click',()=>{
     if(songIndex<=0){
-        songIndex=12;
+        songIndex=24;
     }
     else{
         songIndex -=1;
@@ -96,7 +109,7 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
         masterplay.classList.add('fa-circle-pause');
  })
  document.getElementById("next").addEventListener('click',()=>{
-    if(songIndex>=12){
+    if(songIndex>=24){
         songIndex=0;
     }
     else{
@@ -123,7 +136,7 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
         document.getElementById("shuffle").removeAttribute('style');
     }
     console.log("anu:"+anu);
-    songIndex= Math.ceil(Math.random()*12);
+    songIndex= Math.ceil(Math.random()*24);
     console.log(songIndex);
     audioElement.src=`hindisongs/${songIndex+1}.mp3`;
     songplay.innerText= songs[songIndex].songName;
@@ -138,7 +151,7 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
  audioElement.addEventListener('timeupdate',()=>{
 if(anu===0&&rep===0){
     if(audioElement.currentTime==audioElement.duration){
-        if(songIndex>=12){
+        if(songIndex>=24){
             songIndex=0;
         }
         else{
@@ -156,7 +169,7 @@ if(anu===0&&rep===0){
 }else if(anu===1){
     if (audioElement.currentTime==audioElement.duration)
     {
-        songIndex= Math.ceil(Math.random()*13);
+        songIndex= Math.ceil(Math.random()*25);
     console.log(songIndex);
     audioElement.src=`hindisongs/${songIndex+1}.mp3`;
     songplay.innerText= songs[songIndex].songName;
@@ -193,7 +206,7 @@ if(anu===0&&rep===0){
  audioElement.addEventListener('timeupdate',()=>{
     if(rep===0){
         if(audioElement.currentTime==audioElement.duration){
-            if(songIndex>=12){
+            if(songIndex>=24){
                 songIndex=0;
             }
             else{
