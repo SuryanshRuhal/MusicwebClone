@@ -65,7 +65,7 @@ progressbar.addEventListener('change',()=> {
 })
 
 const makeallplay =()=>{
-    Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
+    Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{ 
         element.classList.remove('fa-regular');
         element.classList.remove('fa-circle-pause'); 
         element.classList.add('fa-regular'); 
@@ -107,6 +107,11 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
         masterplay.classList.remove('fa-circle-play'); 
         masterplay.classList.add('fa-regular'); 
         masterplay.classList.add('fa-circle-pause');
+        makeallplay();
+        document.getElementById(songIndex).classList.remove('fa-regular');
+        document.getElementById(songIndex).classList.remove('fa-circle-play');
+        document.getElementById(songIndex).classList.add('fa-regular');
+        document.getElementById(songIndex).classList.add('fa-circle-pause');
  })
  document.getElementById("next").addEventListener('click',()=>{
     if(songIndex>=24){
@@ -123,6 +128,11 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
         masterplay.classList.remove('fa-circle-play'); 
         masterplay.classList.add('fa-regular'); 
         masterplay.classList.add('fa-circle-pause');
+        makeallplay();
+        document.getElementById(songIndex).classList.remove('fa-regular');
+        document.getElementById(songIndex).classList.remove('fa-circle-play');
+        document.getElementById(songIndex).classList.add('fa-regular');
+        document.getElementById(songIndex).classList.add('fa-circle-pause');
  })
  let anu=0;
  document.getElementById("shuffle").addEventListener('click',()=>{
@@ -146,6 +156,11 @@ Array.from(document.getElementsByClassName("songitemplay")).forEach((element)=>{
         masterplay.classList.remove('fa-circle-play'); 
         masterplay.classList.add('fa-regular'); 
         masterplay.classList.add('fa-circle-pause');
+        makeallplay();
+        document.getElementById(songIndex).classList.remove('fa-regular');
+        document.getElementById(songIndex).classList.remove('fa-circle-play');
+        document.getElementById(songIndex).classList.add('fa-regular');
+        document.getElementById(songIndex).classList.add('fa-circle-pause');
    
  });
  audioElement.addEventListener('timeupdate',()=>{
@@ -165,11 +180,16 @@ if(anu===0&&rep===0){
             masterplay.classList.remove('fa-circle-play'); 
             masterplay.classList.add('fa-regular'); 
             masterplay.classList.add('fa-circle-pause');
+            makeallplay();
+            document.getElementById(songIndex).classList.remove('fa-regular');
+            document.getElementById(songIndex).classList.remove('fa-circle-play');
+            document.getElementById(songIndex).classList.add('fa-regular');
+            document.getElementById(songIndex).classList.add('fa-circle-pause');
     }
 }else if(anu===1){
     if (audioElement.currentTime==audioElement.duration)
     {
-        songIndex= Math.ceil(Math.random()*25);
+        songIndex= Math.ceil(Math.random()*24);
     console.log(songIndex);
     audioElement.src=`hindisongs/${songIndex+1}.mp3`;
     songplay.innerText= songs[songIndex].songName;
@@ -179,6 +199,11 @@ if(anu===0&&rep===0){
         masterplay.classList.remove('fa-circle-play'); 
         masterplay.classList.add('fa-regular'); 
         masterplay.classList.add('fa-circle-pause');
+        makeallplay();
+        document.getElementById(songIndex).classList.remove('fa-regular');
+        document.getElementById(songIndex).classList.remove('fa-circle-play');
+        document.getElementById(songIndex).classList.add('fa-regular');
+        document.getElementById(songIndex).classList.add('fa-circle-pause');
     } 
 }
  });
@@ -202,6 +227,11 @@ if(anu===0&&rep===0){
         masterplay.classList.remove('fa-circle-play'); 
         masterplay.classList.add('fa-regular'); 
         masterplay.classList.add('fa-circle-pause');
+        makeallplay();
+        document.getElementById(songIndex).classList.remove('fa-regular');
+        document.getElementById(songIndex).classList.remove('fa-circle-play');
+        document.getElementById(songIndex).classList.add('fa-regular');
+        document.getElementById(songIndex).classList.add('fa-circle-pause');
  });
  audioElement.addEventListener('timeupdate',()=>{
     if(rep===0){
@@ -220,6 +250,11 @@ if(anu===0&&rep===0){
                 masterplay.classList.remove('fa-circle-play'); 
                 masterplay.classList.add('fa-regular'); 
                 masterplay.classList.add('fa-circle-pause');
+                makeallplay();
+                document.getElementById(songIndex).classList.remove('fa-regular');
+                document.getElementById(songIndex).classList.remove('fa-circle-play');
+                document.getElementById(songIndex).classList.add('fa-regular');
+                document.getElementById(songIndex).classList.add('fa-circle-pause');
         }
     } else if(rep===1){
         if (audioElement.currentTime===audioElement.duration)
@@ -233,6 +268,11 @@ if(anu===0&&rep===0){
             masterplay.classList.remove('fa-circle-play'); 
             masterplay.classList.add('fa-regular'); 
             masterplay.classList.add('fa-circle-pause');
+            makeallplay();
+            document.getElementById(songIndex).classList.remove('fa-regular');
+            document.getElementById(songIndex).classList.remove('fa-circle-play');
+            document.getElementById(songIndex).classList.add('fa-regular');
+            document.getElementById(songIndex).classList.add('fa-circle-pause');
         } 
     }
      });

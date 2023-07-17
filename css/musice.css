@@ -114,6 +114,7 @@ cursor: pointer;
 }
 .songinfo{
     font-size: 0.9em;
+    max-width: 147px;
 }
 }
 
@@ -127,6 +128,7 @@ cursor: pointer;
 }
 .songinfo{
     font-size: 1em;
+    max-width: 165px;
 }
 }
 .bottom{
